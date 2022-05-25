@@ -1448,7 +1448,7 @@ protected void run() {
 
 参考下图
 
-![](https://gitee.com/eardh/picture/raw/master/netty_img/202112151906291.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/netty_img/202112151906291.png)
 
 
 

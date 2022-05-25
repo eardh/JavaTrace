@@ -32,7 +32,7 @@ Mycat是`数据库分库分表`中间件。
 
 **3、数据库中间件对比**
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311538052.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311538052.png)
 
 ①  `Cobar`属于阿里B2B事业群，始于2008年，在阿里服役3年多，接管3000+个MySQL数据库的schema，集群日处理在线SQL请求50亿次以上。由于Cobar发起人的离职，Cobar停止维护。
 
@@ -50,7 +50,7 @@ Mycat是`数据库分库分表`中间件。
 
 ⑧  `MySQLRoute`是MySQL官方Oracle公司发布的中间件
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311538004.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311538004.png)
 
 **3、Mycat的官网**
 
@@ -64,25 +64,25 @@ http://www.mycat.org.cn/
 
 **1、读写分离**
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311538608.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311538608.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311546224.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311546224.png)
 
 **2、数据分片**
 
 垂直拆分（分库）、水平拆分（分表）、垂直+水平拆分（分库分表）
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539040.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539040.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311546838.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311546838.png)
 
 **3、多数据源整合**
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539527.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539527.png)
 
 Mycat支持的数据库：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539866.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539866.png)
 
 
 
@@ -90,7 +90,7 @@ Mycat支持的数据库：
 
 Mycat 的原理中最重要的一个动词是“`拦截`”，它拦截了用户发送过来的 SQL 语句，首先对 SQL 语句做了一些特定的分析：如`分片分析、路由分析、读写分离分析、缓存分析`等，然后将此 SQL 发往后端的真实数据库，并将返回的结果做适当的处理，最终再返回给用户。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539622.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539622.png)
 
 这种方式把数据库的分布式从代码中解耦出来，程序员察觉不出来后台使用`Mycat`还是`MySQL`。
 
@@ -100,7 +100,7 @@ Mycat 的原理中最重要的一个动词是“`拦截`”，它拦截了用户
 
 ### 3. Mycat2
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539915.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539915.png)
 
 右侧的MySQL在Mycat2的配置里面叫做prototype，专门用于响应兼容性SQL和系统表SQL。
 
@@ -112,7 +112,7 @@ Mycat 的原理中最重要的一个动词是“`拦截`”，它拦截了用户
 
 `分库分表中间件`中用于`处理MySQL的兼容性SQL和系统表SQL(比如用于显示库,表的sql)`的服务器，这个配置项可以指向一个服务器也可以是一个集群，Mycat依赖它处理非select,insert,update,delete语句。当这个服务器是与第一个存储节点是同一个服务器/集群的时候，人们一般叫它做0号节点。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539374.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539374.png)
 
 当需要进行数据分片的时候，通过扩展存储节点。
 
@@ -344,7 +344,7 @@ vim /usr/local/mycat/conf/users/root.user.json
 
 启动方式如下图：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539059.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539059.png)
 
 - `Linux命令启动`
 
@@ -385,7 +385,7 @@ tail -n 100 /usr/local/mycat/logs/wrapper.log
 
 **日志内容如下，表示启动成功**
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539976.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539976.png)
 
 
 
@@ -399,7 +399,7 @@ tail -n 100 /usr/local/mycat/logs/wrapper.log
 
 **1. 主从复制原理**
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311539009.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311539009.jpg)
 
 提到主从同步的原理，我们就需要了解在数据库中的一个重要日志文件，那就是 Binlog 二进制日志，它记录了对数据库进行更新的事件。实际上主从同步的原理就是基于 Binlog 进行数据同步的。在主从复制过程中，会基于 3 个线程来操作，一个`主库线程`，两个`从库线程`。 
 
@@ -409,7 +409,7 @@ tail -n 100 /usr/local/mycat/logs/wrapper.log
 
 `从库 SQL 线程`会读取从库中的中继日志，并且`执行日志中的事件`，从而将从库中的数据与主库保持`同步`。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311540046.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311540046.png)
 
 所以你能看到主从同步的内容就是二进制日志（Binlog），它虽然叫二进制日志，实际上存储的是一个又一个`事件（Event）`，这些事件分别对应着数据库的更新操作，比如 `INSERT`、`UPDATE`、`DELETE `等。另外我们还需要注意的是，不是所有版本的 MySQL 都默认开启服务器的二进制日志，在进行主从同步的时候，我们需要先检查服务器`是否已经开启了二进制日志`。
 
@@ -454,9 +454,9 @@ tail -n 100 /usr/local/mycat/logs/wrapper.log
 
 一个主机 CentOS7-h1 用于处理所有写请求，它的从机 CentOS7-h2 和另一台主机 CentOS7-h3 还有它的从机 CentOS7-h4 负责所有读请求。当 CentOS7-h1 主机宕机后，CentOS7-h3 主机负责写请求，CentOS7-h1、CentOS7-h3 互为备机。架构图如下：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311540804.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311540804.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311540183.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311540183.jpg)
 
 
 
@@ -555,7 +555,7 @@ binlog日志三种格式：
   以上两种模式的混合使用。
 
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311540592.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311540592.jpg)
 
 
 
@@ -1146,7 +1146,7 @@ insert into student(id, name) values(1, '张三'), (2, '李四'), (3, @@hostname
 
 利用`/*+ mycat:showInstances{}*/`查看实例状态：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311540930.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311540930.png)
 
 **测试结果如下，如果相同查询查出的 hostname 来自不同主机，说明读写分离成功**
 
@@ -1191,7 +1191,7 @@ mysql> select * from student;
  /*+ mycat:showInstances{}*/
  ```
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541115.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541115.png)
 
 可以看到`MASTER`已经从`dw0`切换到`dw1`。
 
@@ -1205,7 +1205,7 @@ insert into student(id, name) values(4, '孙子');
 
 可以看到刚刚插入的数据再次写入MySQL的`mycluster.student`里面。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541699.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541699.png)
 
 
 
@@ -1233,7 +1233,7 @@ insert into student(id, name) values(4, '孙子');
 
 MyCat的分片实现：
 
- ![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541124.png)
+ ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541124.png)
 
 **逻辑库(schema) ：**MyCat作为一个数据库中间件，起到一个程序与数据库的桥梁作用。开发人员无需知道MyCat的存在，只需要知道数据库的概念即可。为了让MyCat更透明，它会把自己“伪装”成一个MySQL数据库，因此需要有一个虚拟的 database，在MyCat中也叫逻辑库，英文就是schema。
 
@@ -1253,9 +1253,9 @@ MyCat的分片实现：
 
 一个数据库由很多表构成，每个表对应着不同的业务，垂直拆分是指按照业务将表进行分类，分布到不同的数据库上面，这样也就将数据或者说压力分担到不同的库上面，如下图：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541459.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541459.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541366.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541366.png)
 
 系统被拆分成了：用户、订单交易、支付几个模块。
 
@@ -1371,7 +1371,7 @@ drop database mycluster;
 
 逻辑表创建成功后会在相应的MySQL服务器中创建对应的物理表和物理库。如图所示：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541726.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541726.png)
 
 
 
@@ -1436,7 +1436,7 @@ mysql> select * from teacher;
 
 相对于垂直拆分，水平拆分不是将表做分类，而是按照某个字段的某种规则来分散到多个库之中，每个表中包含一部分数据。简单来说，我们可以将数据的水平切分`理解为是按照数据行的切分`，就是将表中的某些行切分到一个数据库，而另外的某些行又切分到其他的数据库中，如图： 
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541285.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541285.png)
 
  
 
@@ -1514,7 +1514,7 @@ create table sign_record (
 
 逻辑表创建成功会在CentOS7-h1MySQL服务器生成如下表：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541208.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541208.png)
 
 
 
@@ -1542,7 +1542,7 @@ source dbseq.sql文件路径
 
 成功以后如图：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311541824.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311541824.png)
 
 `MYCAT_SEQUENCE`表字段解释：
 
@@ -1603,11 +1603,11 @@ insert into sign_record(student_id, sign_id, record_time) values(8,4,NOW());
 
 在`CentOS7-h1`物理表查询分表数据如下：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311542428.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311542428.png)
 
 在Mycat服务器中逻辑表`sign_record`数据如下：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311542063.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311542063.png)
 
 
 
@@ -1619,7 +1619,7 @@ insert into sign_record(student_id, sign_id, record_time) values(8,4,NOW());
 
 如果我们将上面两个的案例综合起来，实现分库分表的结构，首先前面我们已经创建了`c0`、`c1`两个集群，并且有`dw0`、`dw1`、`dr0`，`dr1`这四个数据源，并且我们利用`dr0`实现了`序列号服务`，接下来我们将实现分库分表，即在两个集群之间分库分表。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311542387.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311542387.png)
 
 
 
@@ -1719,7 +1719,7 @@ insert into sign_record(student_id, sign_id, record_time) values(8,4,NOW());
 
 操作成功如下：
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/mysql_img/202203311542452.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203311542452.png)
 
 
 

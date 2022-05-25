@@ -155,7 +155,7 @@ public class Test {
 
 
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242340229.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242340229.png)
 
 > 当 StringTable 设置的大小过小或或大时出现错误
 
@@ -256,7 +256,7 @@ public class StringTest2 {
     *   字符串常量池概念原本使用得比较多，但是这个改动使得我们有足够的理由让我们重新考虑在Java 7中使用String.intern()。
 3.  Java8元空间，字符串常量在堆
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242340767.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242340767.jpg)
 
 
 
@@ -352,25 +352,25 @@ public class StringTest4 {
 
 1、程序启动时已经加载了 3260 个字符串常量
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242340790.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242340790.png)
 
 
 
 2、加载了一个换行符（println），所以多了一个
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242340571.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242340571.png)
 
 
 
 3、加载了字符串常量 “1”~“10”
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242341181.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242341181.png)
 
 
 
 4、之后的字符串"1" 到 "10"不会再次加载
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242340065.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242340065.png)
 
 
 
@@ -397,7 +397,7 @@ class Memory {
 
 分析运行时内存（foo() 方法是实例方法，其实图中少了一个 this 局部变量）
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242341489.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242341489.png)
 
 
 
@@ -462,7 +462,7 @@ class Memory {
 
 > IDEA 反编译 class 文件后，来看这个问题
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242341036.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242341036.png)
 
 
 
@@ -790,7 +790,7 @@ public class Test {
 5.  `23 ldc #8 <b>` ：在字符串常量池中放入 “b”（如果之前字符串常量池中没有 “b” 的话）
 6.  `31 invokevirtual #9 <java/lang/StringBuilder.toString>` ：调用 StringBuilder 的 toString() 方法，会生成一个 String 对象
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242342715.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242342715.png)
 
 
 
@@ -846,13 +846,13 @@ JDK6 ：正常眼光判断即可
 *   new String() 即在堆中
 *   str.intern() 则把字符串放入常量池中
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242342491.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242342491.png)
 
 
 
 JDK7及后续版本，**注意大坑**
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242343285.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242343285.png)
 
 
 
@@ -904,13 +904,13 @@ public class Test {
 
 **JDK6**
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242343283.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242343283.png)
 
 
 
 **JDK7/8**
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344624.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344624.png)
 
 
 
@@ -931,7 +931,7 @@ public class Test {
 }
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344414.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344414.png)
 
 
 
@@ -1022,11 +1022,11 @@ public class Test {
 arr[i] = new String(String.valueOf(data[i % data.length]));
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344622.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344622.png)
 
 
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344174.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344174.png)
 
 
 
@@ -1037,11 +1037,11 @@ arr[i] = new String(String.valueOf(data[i % data.length]));
 arr[i] = new String(String.valueOf(data[i % data.length])).intern();
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344299.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344299.png)
 
 
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242344892.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242344892.png)
 
 **结论**：
 
@@ -1073,11 +1073,11 @@ public class StringGCTest {
 *   Number of entries 和 Number of literals 明显没有 100000
 *   以上两点均说明 StringTable 区发生了垃圾回收
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242345246.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242345246.png)
 
 ---
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110242345481.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110242345481.png)
 
 
 

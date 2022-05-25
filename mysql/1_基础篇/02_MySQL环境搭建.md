@@ -6,7 +6,7 @@
 
 在卸载之前，先停止MySQL8.0的服务。按键盘上的“Ctrl + Alt +Delete”组合键，打开“任务管理器”对话框，可以在“服务”列表找到“MySQL8.0”的服务，如果现在“正在运行”状态，可以右键单击服务，选择“停止”选项停止MySQL8.0的服务，如图所示。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055486.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055486.jpeg)
 
 
 
@@ -16,7 +16,7 @@
 
 卸载MySQL8.0的程序可以和其他桌面应用程序一样直接在“控制面板”选择“卸载程序”，并在程序列表中找到MySQL8.0服务器程序，直接双击卸载即可，如图所示。这种方式删除，数据目录下的数据不会跟着删除。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055638.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055638.jpeg)
 
 **方式2：通过360或电脑管家等软件卸载**
 
@@ -30,25 +30,25 @@
 
 ② 选择要卸载的MySQL服务器程序，单击“Remove”（移除），即可进行卸载。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055271.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055271.jpeg)
 
 ③ 单击“Next”（下一步）按钮，确认卸载。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055087.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055087.jpeg)
 
 ④弹出是否同时移除数据目录选择窗口。如果想要同时删除MySQL服务器中的数据，则勾选“Remove
 the data directory”，如图所示。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055572.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055572.jpeg)
 
 ⑤ 执行卸载。单击“Execute”（执行）按钮进行卸载。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055717.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055717.jpeg)
 
 ⑥完成卸载。单击“Finish”（完成）按钮即可。如果想要同时卸载MySQL8.0的安装向导程序，勾选“Yes，
 Uninstall MySQL Installer”即可，如图所示。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171055241.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171055241.jpeg)
 
 
 
@@ -98,7 +98,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MySQL服务删除
 
 例如：删除 D:\\develop_tools\\mysql\\MySQLServer8.0.26\\bin; 这个部分
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171057574.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171057574.jpeg)
 
 
 
@@ -132,11 +132,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MySQL服务删除
 
 然后，点击 `MySQL Community(GPL) Downloads`
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171530467.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171530467.jpeg)
 
 **3. 点击 MySQL Community Server**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171530662.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171530662.jpeg)
 
 **4. 在General Availability(GA) Releases中选择适合的版本**
 
@@ -144,9 +144,9 @@ Windows平台下提供两种安装文件：MySQL二进制分发版（.msi安装�
 
 - 这里在Windows 系统下推荐下载MSI**安装程序** ；点击 Go to Download Page 进行下载即可
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171530186.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171530186.jpeg)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531247.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531247.jpeg)
 
 - Windows下的MySQL8.0安装有两种安装程序
   - mysql-installer-web-community-8.0.26.0.msi 下载程序大小：2.4M；安装时需要联网安装组件。
@@ -154,9 +154,9 @@ Windows平台下提供两种安装文件：MySQL二进制分发版（.msi安装�
 
 - 如果安装MySQL5.7版本的话，选择Archives ，接着选择MySQL5.7的相应版本即可。这里下载最近期的MySQL5.7.34版本。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531295.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531295.jpeg)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531063.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531063.jpeg)
 
 
 
@@ -168,27 +168,27 @@ MySQL下载完成后，找到下载文件，双击进行安装，具体操作步
 
 步骤2：打开“Choosing a Setup Type”（选择安装类型）窗口，在其中列出了5种安装类型，分别是 Developer Default（默认安装类型）、Server only（仅作为服务器）、Client only（仅作为客户端）、Full（完全安装）、Custom（自定义安装）。这里选择“Custom（自定义安装）”类型按钮，单击“Next(下一步)”按钮。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531466.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531466.jpeg)
 
 步骤3：打开“Select Products”（选择产品）窗口，可以定制需要安装的产品清单。例如，选择“MySQL Server 8.0.26-X64”后，单击“→”添加按钮，即可选择安装MySQL服务器，如图所示。采用通用的方法，可以添加其他你需要安装的产品。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531897.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531897.jpeg)
 
 此时如果直接“Next”（下一步），则产品的安装路径是默认的。如果想要自定义安装目录，则可以选中对应的产品，然后在下面会出现“Advanced Options”（高级选项）的超链接。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171531024.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171531024.jpeg)
 
 单击“Advanced Options”（高级选项）则会弹出安装目录的选择窗口，如图所示，此时你可以分别设置MySQL的服务程序安装目录和数据存储目录。如果不设置，默认分别在C盘的Program Files目录和ProgramData目录（这是一个隐藏目录）。如果自定义安装目录，请避免“中文”目录。另外，建议服务目录和数据目录分开存放。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171532535.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171532535.jpeg)
 
 步骤4：在上一步选择好要安装的产品之后，单击“Next”（下一步）进入确认窗口，如图所示。单击“Execute”（执行）按钮开始安装。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171532906.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171532906.jpeg)
 
 步骤5：安装完成后在“Status”（状态）列表下将显示“Complete”（安装完成），如图所示。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171532342.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171532342.jpeg)
 
 
 
@@ -198,15 +198,15 @@ MySQL安装之后，需要对服务器进行配置。具体的配置步骤如下
 
 步骤1：在上一个小节的最后一步，单击“Next”（下一步）按钮，就可以进入产品配置窗口。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171532326.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171532326.jpeg)
 
 步骤2：单击“Next”（下一步）按钮，进入MySQL服务器类型配置窗口，如图所示。端口号一般选择默认端口号3306。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171532473.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171532473.jpeg)
 
 其中，“Config Type”选项用于设置服务器的类型。单击该选项右侧的下三角按钮，即可查看3个选项，如图所示。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171533269.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171533269.jpeg)
 
 - Development Machine**（开发机器）**：该选项代表典型个人用桌面工作站。此时机器上需要运行多个应用程序，那么MySQL服务器将占用最少的系统资源。
 
@@ -215,33 +215,33 @@ MySQL安装之后，需要对服务器进行配置。具体的配置步骤如下
 
 步骤3：单击“Next”（下一步）按钮，打开设置授权方式窗口。其中，上面的选项是MySQL8.0提供的新的授权方式，采用SHA256基础的密码加密方法；下面的选项是传统授权方法（保留5.x版本兼容性）。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171533522.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171533522.jpeg)
 
 步骤4：单击“Next”（下一步）按钮，打开设置服务器root超级管理员的密码窗口，如图所示，需要输入两次同样的登录密码。也可以通过“Add User”添加其他用户，添加其他用户时，需要指定用户名、允许该用户名在哪台/哪些主机上登录，还可以指定用户角色等。此处暂不添加用户，用户管理在MySQL高级特性篇中讲解。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171534963.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171534963.jpeg)
 
 步骤5：单击“Next”（下一步）按钮，打开设置服务器名称窗口，如图所示。该服务名会出现在Windows服务列表中，也可以在命令行窗口中使用该服务名进行启动和停止服务。本书将服务名设置为“MySQL80”。如果希望开机自启动服务，也可以勾选“Start the MySQL Server at System Startup”选项（推荐）。
 
 下面是选择以什么方式运行服务？可以选择“Standard System Account”(标准系统用户)或者“Custom User” (自定义用户)中的一个。这里推荐前者。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171534379.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171534379.jpeg)
 
 步骤6：单击“Next”（下一步）按钮，打开确认设置服务器窗口，单击“Execute”（执行）按钮。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171535946.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171535946.jpeg)
 
 步骤7：完成配置，如图所示。单击“Finish”（完成）按钮，即可完成服务器的配置。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171535255.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171535255.jpeg)
 
 步骤8：如果还有其他产品需要配置，可以选择其他产品，然后继续配置。如果没有，直接选择“Next”（下一步），直接完成整个安装和配置过程。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171535549.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171535549.jpeg)
 
 步骤9：结束安装和配置。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171535807.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171535807.jpeg)
 
 
 
@@ -279,13 +279,13 @@ MySQL的安装和配置是一件非常简单的事，但是在操作过程中也
 
 在运行MySQL8.0软件安装包之前，用户需要确保系统中已经安装了.Net Framework相关软件，如果缺少此软件，将不能正常地安装MySQL8.0软件。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171541415.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171541415.jpeg)
 
 解决方案：到这个地址[**https://www.microsoft.com/en-us/download/details.aspx?id=42642**](https://www.microsoft.com/en-us/download/details.aspx?id=42642)下载Microsoft .NET Framework 4.5并安装后，再去安装MySQL。
 
 另外，还要确保Windows Installer正常安装。windows上安装mysql8.0需要操作系统提前已安装好 Microsoft Visual C++ 2015-2019。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171541402.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171541402.png)
 
 解决方案同样是，提前到微软官网https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0，下载相应的环境。
 
@@ -321,7 +321,7 @@ MySQL安装完毕之后，需要启动服务器进程，不然客户端无法连
 
 - 步骤2：找到MySQL80（点击鼠标右键）→ 启动或停止（点击）
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171546396.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171546396.jpeg)
 
 **方式2：使用命令行工具**
 
@@ -333,7 +333,7 @@ net start MySQL服务名
 net stop MySQL服务名
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171548792.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171548792.jpeg)
 
 说明：
 
@@ -351,7 +351,7 @@ net stop MySQL服务名
 
 开始菜单 → 所有程序 → MySQL → MySQL 8.0 Command Line Client
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171548090.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171548090.png)
 
 > 说明：仅限于root用户
 
@@ -369,7 +369,7 @@ mysql -h 主机名 -P 端口号 -u 用户名 -p密码
 mysql -h localhost -P 3306 -u root -pabc123 # 这里我设置的root用户的密码是abc123
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171550976.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171550976.jpeg)
 
 注意：
 
@@ -629,9 +629,9 @@ show variables like 'character_%';
 show variables like 'collation_%';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171607645.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171607645.jpeg)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171607790.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171607790.jpeg)
 
 - 如果是以上配置就说明对了。接着我们就可以新创建数据库、新创建数据表，接着添加包含中文的数据了。
 
@@ -661,13 +661,13 @@ MySQL Workbench 为数据库管理员、程序开发者和系统规划师提供�
 
 首先，我们点击 Windows 左下角的“开始”按钮，如果你是 Win10 系统，可以直接看到所有程序。接着，找到“MySQL”，点开，找到“MySQL Workbench 8.0 CE”。点击打开 Workbench，如下图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171612944.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171612944.jpeg)
 
 左下角有个本地连接，点击，录入 Root 的密码，登录本地 MySQL 数据库服务器，如下图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171612513.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171612513.jpeg)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171612941.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171612941.png)
 
 这是一个图形化的界面，我来给你介绍下这个界面。
 
@@ -684,7 +684,7 @@ MySQL Workbench 为数据库管理员、程序开发者和系统规划师提供�
 Navicat MySQL是一个强大的MySQL数据库服务器管理和开发工具。它可以与任何3.21或以上版本的MySQL一起工作，支持触发器、存储过程、函数、事件、视图、管理用户等，对于新手来说易学易用。其精心设计的图形用户界面（GUI）可以让用户用一种安全简便的方式来快速方便地创建、组织、访问和共享信息。Navicat支持中文，有免费版本提供。
 下载地址：[**http://www.navicat.com/**](http://www.navicat.com/) 
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171614674.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171614674.png)
 
 
 
@@ -693,7 +693,7 @@ Navicat MySQL是一个强大的MySQL数据库服务器管理和开发工具。�
 SQLyog 是业界著名的 Webyog 公司出品的一款简洁高效、功能强大的图形化 MySQL数据库管理工具。这款工具是使用C++语言开的。该工具可以方便地创建数据库、表、视图和索引等，还可以方便地进行插入、更新和删除等操作，同时可以方便地进行数据库、数据表的备份和还原。该工具不仅可以通过SQL文件进行大量文件的导入和导出，还可以导入和导出XML、HTML和CSV等多种格式的数据。
 下载地址：[**http://www.webyog.com/**](http://www.webyog.com/)，读者也可以搜索中文版的下载地址。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171615996.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171615996.png)
 
 
 
@@ -705,9 +705,9 @@ DBeaver是一个通用的数据库管理工具和 SQL客户端，支持所有流
 
 下载地址：[**https://dbeaver.io/download/**](https://dbeaver.io/download/)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171616466.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171616466.png)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171616543.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171616543.png)
 
 
 
@@ -715,7 +715,7 @@ DBeaver是一个通用的数据库管理工具和 SQL客户端，支持所有流
 
 有些图形界面工具，特别是旧版本的图形界面工具，在连接MySQL8时出现“Authentication plugin 'caching_sha2_password' cannot be loaded”错误。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171616540.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171616540.jpeg)
 
 出现这个原因是MySQL8之前的版本中加密规则是mysql_native_password，而在MySQL8之后，加密规则是caching_sha2_password。解决问题方法有两种，第一种是升级图形界面工具版本，第二种是把MySQL8用户登录密码加密规则还原成mysql_native_password。
 
@@ -732,7 +732,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'abc123';
 FLUSH PRIVILEGES
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171617699.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171617699.jpeg)
 
 
 
@@ -760,7 +760,7 @@ FLUSH PRIVILEGES
 
 MySQL 是用 C++ 开发而成的，我简单介绍一下源代码的组成。 mysql-8.0.22 目录下的各个子目录，包含了 MySQL 各部分组件的源代码：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171637277.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171637277.jpeg)
 
 - sql 子目录是 MySQL 核心代码；
 - libmysql 子目录是客户端程序 API；
@@ -769,7 +769,7 @@ MySQL 是用 C++ 开发而成的，我简单介绍一下源代码的组成。 my
 
 源代码可以用记事本打开查看，如果你有 C++ 的开发环境，也可以在开发环境中打开查看。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171638491.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171638491.jpeg)
 
 如上图所示，源代码并不神秘，就是普通的 C++ 代码，跟你熟悉的一样，而且有很多注释，可以帮助你理解。阅读源代码就像在跟 MySQL 的开发人员对话一样，十分有趣。
 
@@ -796,7 +796,7 @@ MySQL 是用 C++ 开发而成的，我简单介绍一下源代码的组成。 my
 
 如果输入mysql命令报“不是内部或外部命令”，把mysql安装目录的bin目录配置到环境变量path中。如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171638162.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171638162.jpeg)
 
 
 
@@ -819,15 +819,15 @@ row 1
 
 原因：服务器端认为你的客户端的字符集是utf-8，而实际上你的客户端的字符集是GBK。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171638901.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171638901.jpeg)
 
 查看所有字符集：**SHOW VARIABLES LIKE 'character_set_%';**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171638869.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171638869.jpeg)
 
 解决方案，设置当前连接的客户端字符集 **“SET NAMES GBK;”**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171638696.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171638696.jpeg)
 
 
 

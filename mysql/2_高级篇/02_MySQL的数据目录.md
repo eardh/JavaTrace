@@ -30,7 +30,7 @@ mysql> show variables like 'datadir';
 
 **相关命令目录：/usr/bin（mysqladmin、mysqlbinlog、mysqldump等命令）和/usr/sbin。**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171603418.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171603418.jpeg)
 
 
 
@@ -38,7 +38,7 @@ mysql> show variables like 'datadir';
 
 **配置文件目录：/usr/share/mysql-8.0（命令及配置文件），/etc/mysql（如my.cnf）**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171603837.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171603837.jpeg)
 
 
 

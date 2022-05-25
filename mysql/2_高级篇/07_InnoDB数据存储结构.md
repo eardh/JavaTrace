@@ -16,7 +16,7 @@ InnoDB将数据划分为若干个页，InnoDB中页的大小默认为`16KB`。
 
 > 记录是按照行来存储的，但是数据库的读取并不以行为单位，否则一次读取（也就是一次I/O操作）只能处理一行数据，效率会非常低。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648710.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648710.png)
 
 
 
@@ -34,7 +34,7 @@ InnoDB将数据划分为若干个页，InnoDB中页的大小默认为`16KB`。
 mysql> show variables like '%innodb_page_size%';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648941.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648941.png)
 
 SQL Server中页的大小为 `8KB`，而在oracle中我们用术语“`块`”(Block)来代表"页”，oralce支持的块大小为2KB，4KB，8KB，16KB，32KB 和 64KB。
 
@@ -44,7 +44,7 @@ SQL Server中页的大小为 `8KB`，而在oracle中我们用术语“`块`”(B
 
 另外在数据库中，还存在着区(Extent)、段(Segment)和表空间(Tablespace)的概念。行、页、区、段、表空间的关系如下图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648635.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648635.png)
 
 区(Extent)是比页大一级的存储结构，在InnoDB存储引擎中，一个区会分配`64 个连续的页`。因为InnoDB中的页大小默认是16KB，所以一个区的大小是`64*16KB= 1MB`。
 
@@ -62,11 +62,11 @@ SQL Server中页的大小为 `8KB`，而在oracle中我们用术语“`块`”(B
 
 页结构的示意图如下所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648565.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648565.png)
 
 这7个部分作用分别如下，我们简单梳理如下表所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648180.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648180.png)
 
 我们可以把这7个结构分成3个部分。
 
@@ -105,9 +105,9 @@ SQL Server中页的大小为 `8KB`，而在oracle中我们用术语“`块`”(B
 
    InnoDB都是以页为单位存放数据的，如果数据分散到多个不连续的页中存储的话需要把这些页关联起来，FIL_PAGE_PREV 和 FIL_PAGE_NEXT 就分别代表本页的上一个和下一个页的页号。这样通过建立一个双向链表把许许多多的页就都串联起来了，保证这些页之间不需要是物理上的连续，而是逻辑上的连续。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648524.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648524.png)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201648602.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201648602.png)
 
 4. `FIL_PAGE_SPACE_OR_CHKSUM`（4字节）
 
@@ -137,7 +137,7 @@ SQL Server中页的大小为 `8KB`，而在oracle中我们用术语“`块`”(B
 
 第二个部分是记录部分，页的主要作用是存储记录，所以“最大和最小记录”和“用户记录”部分占了页结构的主要空间。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649845.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649845.png)
 
 
 
@@ -158,13 +158,13 @@ User Records中的这些记录按照`指定的行格式`一条一条摆在User R
 
 InnoDB规定的`最小记录`与`最大记录`这两条记录的构造十分简单，都是由**5字节大小的记录头信息**和**8字节大小的一个固定的部分组成的**，如图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649554.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649554.png)
 
 
 
 这两条记录`不是我们自己定义的记录`，所以它们并不存放在页的`User Records`部分，他们被单独放在一个称为`Infimum + Supremum`的部分，如图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649568.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649568.png)
 
 
 
@@ -172,7 +172,7 @@ InnoDB规定的`最小记录`与`最大记录`这两条记录的构造十分简�
 
 我们自己存储的记录会按照指定的`行格式`存储到`User Records`部分。但是在一开始生成页的时候，其实并没有User Records这个部分，**每当我们插入一条记录，都会从Free Space部分，也就是尚未使用的存储空间中申请一个记录大小的空间划分到User Records部分**，当Free Space部分的空间全部被User Records部分替代掉之后，也就意味着这个页使用完了，如果还有新的记录插入的话，就需要去**申请新的页**了。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649198.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649198.png)
 
 
 
@@ -206,13 +206,13 @@ SELECT * FROM page_demo WHERE c1 = 3;
 
 举例1：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649216.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649216.png)
 
 举例2：
 
 现在的page_demo表中正常的记录共有6条，InnoDB会把它们分成两组，第一组中只有一个最小记录，第二组中是剩余的5条记录。如下图：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649658.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649658.png)
 
 从这个图中我们需要注意这么几点：
 
@@ -223,11 +223,11 @@ SELECT * FROM page_demo WHERE c1 = 3;
 
 用箭头指向的方式替代数字，这样更易于我们理解，修改后如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649664.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649664.png)
 
 再换个角度看一下：（单纯从逻辑上看一下这些记录和页目录的关系）
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649799.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649799.png)
 
 **页目录分组的个数如何确定？**
 
@@ -264,7 +264,7 @@ VALUES
 
 添加了12条记录，现在页里一共有18条记录了（包括最小和最大记录），这些记录被分成了5个组，如图所示：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201649951.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201649951.png)
 
 这里只保留了16条记录的记录头信息中的n_owned和next_record属性，省略了各个记录之间的箭头。
 
@@ -323,7 +323,7 @@ VALUES
 
 2. 非叶子节点，节点的高度大于0，存储索引键和页面指针，并不存储行记录本身。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650140.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650140.png)
 
 当我们从页结构来理解B+树的结构的时候，可以帮我们理解一些通过索引进行检索的原理。
 
@@ -402,7 +402,7 @@ VALUES
 
 在MySQL 5.1版本中，默认设置为`Compact行格式`。一条完整的记录其实可以被分为记录的额外信息和记录的真实数据两大部分。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650748.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650748.png)
 
 
 
@@ -424,7 +424,7 @@ MySQL支持一些变长的数据类型，比如VARCHAR(M)、VARBINARY(M)、TEXT�
 
 把这个字节串组成的变长字段长度列表填入上边的示意图中的效果就是：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650235.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650235.png)
 
 
 
@@ -443,11 +443,11 @@ record_test_table的两条记录的NULL值列表就如下：
 
 第一条记录：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650552.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650552.png)
 
 第二条记录：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650553.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650553.png)
 
 
 
@@ -467,7 +467,7 @@ Query OK, 0 rows affected (0.03 sec)
 
 这个表中记录的行格式示意图：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650706.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650706.png)
 
 这些记录头信息中各个属性如下：
 
@@ -484,7 +484,7 @@ Query OK, 0 rows affected (0.03 sec)
 
 简化后的行格式示意图：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650627.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650627.png)
 
 插入数据：
 
@@ -499,7 +499,7 @@ Query OK, 0 rows affected (0.03 sec)
 
 图示如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201650527.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201650527.png)
 
 **1. delete_mask**
 
@@ -548,7 +548,7 @@ MySQL会自动给每个页里加了两个记录，由于这两个记录并不是
 比如：第一条记录的next_record值为32，意味着从第一条记录的真实数据的地址处向后找32个字节便是下一条记录的真实数据。
 **注意，下一条记录指得并不是按照我们插入顺序的下一条记录，而是按照主键值由小到大的顺序的下一条记录**。而且规定Infimum记录（也就是最小记录）的下一条记录就是本页中主键值最小的用户记录，而本页中主键值最大的用户记录的下一条记录就是 Supremum记录（也就是最大记录）。下图用箭头代替偏移量表示`next_record`。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201651525.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201651525.png)
 
 ##### 1. 演示：删除操作
 
@@ -562,7 +562,7 @@ Query OK, 1 row affected (0.02 sec)
 
 删掉第2条记录后的示意图就是：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201651369.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201651369.png)
 
 从图中可以看出来，删除第2条记录前后主要发生了这些变化：
 - 第2条记录并没有从存储空间中移除，而是把该条记录的delete_mask值设置为1。
@@ -587,7 +587,7 @@ Query OK, 1 row affected (0.00 sec)
 
 我们看一下记录的存储情况：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201651074.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201651074.png)
 
 直接复用了原来被删除记录的存储空间。
 
@@ -736,7 +736,7 @@ CREATE TABLE varchar_size_demo(
 
 这称为页的扩展，举例如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201651506.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201651506.png)
 
 
 
@@ -749,7 +749,7 @@ CREATE TABLE varchar_size_demo(
 
 `Compressed行记录格式`的另一个功能就是，存储在其中的行数据会以zlib的算法进行压缩，因此对于`BLOB、TEXT、VARCHAR`这类`大长度`类型的数据能够进行`非常有效的存储`。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201652554.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201652554.png)
 
 
 
@@ -765,7 +765,7 @@ Query OK, 0 rows affected (0.05 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201652686.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201652686.png)
 
 从上图可以看到，不同于Compact行记录格式，Redundant行格式的首部是一个字段长度偏移列表，同样是按照列的顺序`逆序放置`的。
 
@@ -945,7 +945,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 mysql> show variables like 'innodb_file_per_table';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201655487.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201655487.png)
 
 你能看到`innodb_file_per_table=ON`，这就意味着每张表都会单独保存为一个`.ibd` 文件。
 
@@ -1099,7 +1099,7 @@ InnoDB从磁盘中读取数据的`最小单位`是数据页。而你想得到的
 
 如果该数据存在于内存中，基本上执行时间在 1ms 左右，效率还是很高的。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201655812.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201655812.png)
 
 
 
@@ -1107,7 +1107,7 @@ InnoDB从磁盘中读取数据的`最小单位`是数据页。而你想得到的
 
 如果数据没有在内存中，就需要在磁盘上对该页进行查找，整体时间预估在`10ms`左右，这10ms 中有6ms是磁盘的实际繁忙时间(包括了`寻道和半圈旋转时间`），有3ms是对可能发生的排队时间的估计值，另外还有1ms的传输时间，将页从磁盘服务器缓冲区传输到数据库缓冲区中。这10ms看起来很快，但实际上对于数据库来说消耗的时间已经非常长了，因为这还只是一个页的读取时间。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203201655680.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203201655680.png)
 
 
 

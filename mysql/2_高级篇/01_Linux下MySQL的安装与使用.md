@@ -1,6 +1,6 @@
 # Linux下MySQL的安装与使用
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171456521.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171456521.png)
 
 ## 1. 安装前说明
 
@@ -38,11 +38,11 @@ systemctl status mysqld.service
 
 - 如果存在mysql-libs的旧版本包，显示如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457514.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457514.jpeg)
 
 - 如果不存在mysql-lib的版本，显示如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457035.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457035.jpeg)
 
 
 
@@ -123,17 +123,17 @@ rm -rf /etc/my.cnf
 
 然后，点击 MySQL Community(GPL) Downloads
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457640.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457640.jpeg)
 
 **3. 点击 MySQL Community Server**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457354.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457354.jpeg)
 
 **4. 在General Availability(GA) Releases中选择适合的版本**
 
 - ** 如果安装Windows 系统下MySQL，推荐下载 MSI**安装程序** ；点击 Go to Download Page 进行下载即可
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457438.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457438.png)
 
 - Windows下的MySQL安装有两种安装程序
   - mysql-installer-web-community-8.0.25.0.msi 下载程序大小：2.4M；安装时需要联网安装组件。
@@ -149,7 +149,7 @@ rm -rf /etc/my.cnf
 
 .rpm包的一般格式：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457098.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457098.jpeg)
 
 **方式2：yum命令**
 
@@ -171,7 +171,7 @@ rm -rf /etc/my.cnf
 - 这里不能直接选择CentOS 7系统的版本，所以选择与之对应的 Red Hat Enterprise Linux
 - https://downloads.mysql.com/archives/community/ 直接点Download下载RPM Bundle全量包。包括了所有下面的组件。不需要一个一个下载了。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457273.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457273.jpeg)
 
 **6. 下载的tar包，用压缩工具打开**
 
@@ -179,7 +179,7 @@ rm -rf /etc/my.cnf
 
 - 解压后rpm安装包（红框为抽取出来的安装包）
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457293.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457293.jpeg)
 
 
 
@@ -193,7 +193,7 @@ rm -rf /etc/my.cnf
 chmod -R 777 /tmp
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171457776.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171457776.jpeg)
 
 **2. 安装前，检查依赖**
 
@@ -203,7 +203,7 @@ rpm -qa|grep libaio
 
 - 如果存在libaio包如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458736.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458736.jpeg)
 
 ```bash
 rpm -qa|grep net-tools
@@ -211,7 +211,7 @@ rpm -qa|grep net-tools
 
 - 如果存在net-tools包如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458652.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458652.jpeg)
 
 ```bash
 rpm -qa|grep net-tools
@@ -247,15 +247,15 @@ rpm -ivh mysql-community-server-8.0.25-1.el7.x86_64.rpm
 - -v , --verbose 提供更多的详细信息输出
 - -h , --hash 软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)，展示进度条
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458767.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458767.jpeg)
 
 **2. 安装过程截图**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458785.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458785.jpeg)
 
 安装过程中可能的报错信息：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458829.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458829.jpeg)
 
 > 一个命令：**yum remove mysql-libs** 解决，清除之前安装过的依赖即可
 
@@ -271,7 +271,7 @@ mysql --version
 mysqladmin --version
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458230.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458230.jpeg)
 
 执行如下命令，查看是否安装成功。需要增加 -i 不用去区分大小写，否则搜索不到。
 
@@ -279,7 +279,7 @@ mysqladmin --version
 rpm -qa|grep -i mysql
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458877.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458877.jpeg)
 
 **4. 服务的初始化**
 
@@ -297,7 +297,7 @@ mysqld --initialize --user=mysql
 cat /var/log/mysqld.log
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459076.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459076.jpeg)
 
 root@localhost: 后面就是初始化的密码
 
@@ -317,7 +317,7 @@ root@localhost: 后面就是初始化的密码
 
 > mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可执行文件就可以直接启动一个服务器进程。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458214.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458214.jpeg)
 
 查看进程：
 
@@ -325,7 +325,7 @@ root@localhost: 后面就是初始化的密码
 ps -ef | grep -i mysql
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458837.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458837.jpeg)
 
 **6. 查看MySQL服务是否自启动**
 
@@ -333,7 +333,7 @@ ps -ef | grep -i mysql
 systemctl list-unit-files|grep mysqld.service
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458575.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458575.jpeg)
 
 默认是enabled。
 
@@ -343,7 +343,7 @@ systemctl list-unit-files|grep mysqld.service
   systemctl enable mysqld.service
   ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458108.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458108.jpeg)
 
 - 如果希望不进行自启动，运行如下命令设置
 
@@ -351,7 +351,7 @@ systemctl list-unit-files|grep mysqld.service
   systemctl disable mysqld.service
   ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458074.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458074.jpeg)
 
 
 
@@ -363,7 +363,7 @@ systemctl list-unit-files|grep mysqld.service
 
 通过 mysql -hlocalhost -P3306 -uroot -p 进行登录，在Enter password：录入初始化密码
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458819.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458819.jpeg)
 
 
 
@@ -379,11 +379,11 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 
 - 5.7版本之后（不含5.7），mysql加入了全新的密码安全机制。设置新密码太简单会报错。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458748.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458748.jpeg)
 
 - 改为更复杂的密码规则之后，设置成功，可以正常使用数据库了
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171458051.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171458051.jpeg)
 
 
 
@@ -393,7 +393,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 
 在用SQLyog或Navicat中配置远程连接Mysql数据库时遇到如下报错信息，这是由于Mysql配置了不支持远程连接引起的。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459730.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459730.jpeg)
 
 **2. 确认网络**
 
@@ -403,9 +403,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 
 拓展： telnet**命令开启** :
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459526.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459526.png)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459976.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459976.jpeg)
 
 **3. 关闭防火墙或开放端口**
 
@@ -464,7 +464,7 @@ use mysql;
 select Host,User from user;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459428.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459428.jpeg)
 
 可以看到root用户的当前主机配置信息为localhost。
 
@@ -480,7 +480,7 @@ update user set host = '%' where user ='root';
 
 Host设置了“%”后便可以允许远程访问。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171459275.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171459275.jpeg)
 
 Host修改完成后记得执行flush privileges使配置立即生效：
 
@@ -493,7 +493,7 @@ flush privileges;
 - 如果是 MySQL5.7 版本，接下来就可以使用SQLyog或者Navicat成功连接至MySQL了。
 - 如果是 MySQL 8 版本，连接时还会出现如下问题：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500225.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500225.jpeg)
 
 配置新连接报错：错误号码 2058，分析是 mysql 密码加密方法变了。
 
@@ -740,19 +740,19 @@ show variables like '%char%';
 
 - MySQL8.0中执行：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500649.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500649.png)
 
 MySQL5.7中执行：MySQL 5.7 默认的客户端和服务器都用了 latin1，不支持中文，保存中文会报错。MySQL5.7截图如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500832.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500832.jpeg)
 
 在MySQL5.7中添加中文数据时，报错：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500082.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500082.png)
 
 因为默认情况下，创建表使用的是 latin1 。如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500544.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500544.jpeg)
 
 **操作2：修改字符集**
 
@@ -766,7 +766,7 @@ vim /etc/my.cnf
 character_set_server=utf8
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500514.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500514.jpeg)
 
 **操作3：重新启动MySQL服务**
 
@@ -780,7 +780,7 @@ systemctl restart mysqld
 
 MySQL5.7版本中，以前创建的库，创建的表字符集还是latin1。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500987.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500987.jpeg)
 
 修改已创建数据库的字符集
 
@@ -794,7 +794,7 @@ alter database dbtest1 character set 'utf8';
 alter table t_emp convert to character set 'utf8';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500450.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500450.png)
 
 > 注意：但是原有的数据如果是用非'utf8'编码的话，数据本身编码不会发生改变。已有数据需要导出或删除，然后重新插入。
 
@@ -818,7 +818,7 @@ MySQL有4个级别的字符集和比较规则，分别是：
 show variables like 'character%';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500903.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500903.jpeg)
 
 - character_set_server：服务器级别的字符集
 - character_set_database：当前数据库的字符集
@@ -994,7 +994,7 @@ ALTER TABLE emp1 DEFAULT CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
 
 这几个系统变量在我的计算机上的默认值如下（不同操作系统的默认值可能不同）：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171500025.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171500025.jpeg)
 
 为了体现出字符集在请求处理过程中的变化，我们这里特意修改一个系统变量的值：
 
@@ -1041,7 +1041,7 @@ SELECT * FROM t WHERE s = '我';
 
 总结图示如下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501222.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501222.jpeg)
 
 
 
@@ -1063,11 +1063,11 @@ SHOW VARIABLES LIKE '%lower_case_table_names%';
 
 - Windows系统下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501852.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501852.jpeg)
 
 - Linux系统下：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501194.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501194.jpeg)
 
 - `lower_case_table_names` 参数值的设置：
   - **默认为0，大小写敏感**。
@@ -1160,13 +1160,13 @@ set sql_mode = ONLY_FULL_GROUP_BY;
 select * from employees group by department_id limit 10;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501973.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501973.jpeg)
 
 **宽松模式举例2：**
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501455.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501455.png)
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501004.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501004.jpeg)
 
 设置 sql_mode 模式为 STRICT_TRANS_TABLES ，然后插入数据：
 
@@ -1187,7 +1187,7 @@ select @@global.sql_mode
 show variables like 'sql_mode';
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203171501034.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501034.png)
 
 - **临时设置方式：设置当前窗口中设置sql_mode**
 

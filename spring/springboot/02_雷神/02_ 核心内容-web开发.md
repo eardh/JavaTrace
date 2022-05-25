@@ -1,6 +1,6 @@
 # Web 开发
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657169.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657169.png)
 
 
 
@@ -415,7 +415,7 @@ spring:
 
 #### 2. 请求映射原理
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657883.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657883.png)
 
 SpringMVC功能分析都从org.springframework.web.servlet.DispatcherServlet -> doDispatch()
 
@@ -441,11 +441,11 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
             //HandlerMapping：处理器映射。/xxx -> xxxx
 ```
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657751.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657751.png)
 
 **RequestMappingHandlerMapping**：保存了所有@RequestMapping 和handler的映射规则。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657140.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657140.png)
 
 所有的请求映射都在HandlerMapping中。
 
@@ -603,11 +603,11 @@ Map、Model类型的参数，会返回 `mavContainer.getModel()`；---> BindingA
 
 `mavContainer.getModel()`; 获取到值的
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657739.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657739.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657405.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657405.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657485.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657485.png)
 
 
 
@@ -656,7 +656,7 @@ public class Pet {
 
 #### 1. HandlerAdapter
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657529.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657529.png)
 
 - 支持方法上标注@RequestMapping 
 - 支持函数式编程的
@@ -692,9 +692,9 @@ Object[] args = getMethodArgumentValues(request, mavContainer, providedArgs);
 
   SpringMVC目标方法能写多少种参数类型。取决于参数解析器。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221657974.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221657974.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658162.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658162.png)
 
 - 当前解析器是否支持解析这种参数
 - 支持就调用 resolveArgument
@@ -703,7 +703,7 @@ Object[] args = getMethodArgumentValues(request, mavContainer, providedArgs);
 
 #### 4. 返回值处理器
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658762.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658762.png)
 
 
 
@@ -876,9 +876,9 @@ byte -- > file
 
 `@FunctionalInterfacepublic interface Converter<S, T>`
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658671.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658671.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658064.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658064.png)
 
 未来我们可以给WebDataBinder里面放自己的Converter；
 
@@ -927,7 +927,7 @@ public WebMvcConfigurer webMvcConfigurer(){
 
 将所有的数据都放在 **ModelAndViewContainer**；包含要去的页面地址View。还包含Model数据。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658430.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658430.png)
 
 
 
@@ -1003,7 +1003,7 @@ protected void exposeModelAsRequestAttributes(Map<String, Object> model,
 
 ## 4. 数据响应与内容协商
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658567.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658567.png)
 
 
 
@@ -1031,7 +1031,7 @@ protected void exposeModelAsRequestAttributes(Map<String, Object> model,
 
 ##### 1. 返回值解析器
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658428.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658428.png)
 
 ```java
 try {
@@ -1074,7 +1074,7 @@ public void handleReturnValue(@Nullable Object returnValue, MethodParameter retu
 
 ##### 2. 返回值解析器原理
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658618.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658618.png)
 
 1. 返回值处理器判断是否支持这种类型返回值 supportsReturnType
 2. 返回值处理器调用 handleReturnValue 进行处理
@@ -1111,7 +1111,7 @@ public void handleReturnValue(@Nullable Object returnValue, MethodParameter retu
 
 ##### 1. MessageConverter规范
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658892.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658892.png)
 
 HttpMessageConverter: 看是否支持将 此 Class类型的对象，转为MediaType类型的数据。
 
@@ -1121,7 +1121,7 @@ HttpMessageConverter: 看是否支持将 此 Class类型的对象，转为MediaT
 
 ##### 2. 默认的MessageConverter
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221658524.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221658524.png)
 
 0 - 只支持Byte类型的
 
@@ -1145,7 +1145,7 @@ HttpMessageConverter: 看是否支持将 此 Class类型的对象，转为MediaT
 
 最终 MappingJackson2HttpMessageConverter  把对象转为JSON（利用底层的jackson的objectMapper转换的）
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659051.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659051.png)
 
 
 
@@ -1168,7 +1168,7 @@ HttpMessageConverter: 看是否支持将 此 Class类型的对象，转为MediaT
 
 只需要改变请求头中Accept字段。Http协议中规定的，告诉服务器本客户端可以接收的数据类型。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659307.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659307.png)
 
 
 
@@ -1185,7 +1185,7 @@ spring:
 
 发请求：http://localhost:8080/test/person?format=jsonxml
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659011.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659011.png)
 
 确定客户端接收什么样的内容类型；
 
@@ -1207,11 +1207,11 @@ spring:
 
    - contentNegotiationManager 内容协商管理器 默认使用基于请求头的策略
 
-     ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659748.png)
+     ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659748.png)
 
    - HeaderContentNegotiationStrategy  确定客户端可以接收的内容类型
 
-     ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659121.png)
+     ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659121.png)
 
 3. 遍历循环所有当前系统的 MessageConverter，看谁支持操作这个对象（Person）
 
@@ -1219,13 +1219,13 @@ spring:
 
 5. 客户端需要【application/xml】。服务端能力【10种、json、xml】
 
-   ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659057.png)
+   ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659057.png)
 
 6. 进行内容协商的最佳匹配媒体类型
 
 7. 用支持将对象转为 最佳匹配媒体类型 的converter。调用它进行转化 。
 
-   ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659444.png)
+   ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659444.png)
 
 导入了jackson处理xml的包，xml的converter就会自动进来
 
@@ -1268,9 +1268,9 @@ public WebMvcConfigurer webMvcConfigurer(){
 }
 ```
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659726.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659726.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659558.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659558.png)
 
 有可能我们添加的自定义的功能会覆盖默认很多功能，导致一些默认的功能失效。
 
@@ -1282,7 +1282,7 @@ public WebMvcConfigurer webMvcConfigurer(){
 
 ## 5. 视图解析与模板引擎
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659833.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659833.png)
 
 ### 1. 视图解析
 
@@ -1310,13 +1310,13 @@ public WebMvcConfigurer webMvcConfigurer(){
 
 自定义视图解析器+自定义视图； 大厂学院。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659297.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659297.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659931.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659931.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659747.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659747.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221659457.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221659457.png)
 
 
 
@@ -1741,9 +1741,9 @@ public class AdminWebConfig implements WebMvcConfigurer {
 6. 前面的步骤有任何异常都会直接倒序触发 `afterCompletion`
 7. 页面成功渲染完成以后，也会倒序触发 `afterCompletion`
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700310.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700310.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700385.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700385.png)
 
 
 
@@ -1825,7 +1825,7 @@ public String upload(
     @RequestPart("photos") MultipartFile[] photos)
 ```
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700863.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700863.png)
 
 
 
@@ -1840,15 +1840,15 @@ public String upload(
 - 默认情况下，Spring Boot提供`/error`处理所有错误的映射
 - 对于机器客户端，它将生成JSON响应，其中包含错误，HTTP状态和异常消息的详细信息。对于浏览器客户端，响应一个“ whitelabel”错误视图，以HTML格式呈现相同的数据
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700763.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700763.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700404.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700404.png)
 
 - 要对其进行自定义，添加`View`解析为`error`
 - 要完全替换默认行为，可以实现 `ErrorController `并注册该类型的Bean定义，或添加`ErrorAttributes类型的组件`以使用现有机制但替换其内容。
 - error/下的4xx，5xx页面会被自动解析；
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700314.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700314.png)
 
 
 
@@ -1861,11 +1861,11 @@ public String upload(
 - Spring底层的异常，如参数类型转换异常；`DefaultHandlerExceptionResolver` 处理框架底层的异常。
   - response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage()); 
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700944.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700944.png)
 
 - 自定义实现 HandlerExceptionResolver 处理异常；可以作为默认的全局异常处理规则
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700510.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700510.png)
 
 - `ErrorViewResolver`  实现自定义处理异常；
   - response.sendError 。error请求就会转给controller
@@ -1881,9 +1881,9 @@ public String upload(
     - public class DefaultErrorAttributes implements ErrorAttributes, HandlerExceptionResolver
     - `DefaultErrorAttributes`：定义错误页面中可以包含哪些数据。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700871.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700871.png)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700719.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700719.png)
 
 - 容器中的组件：类型：`BasicErrorController` --> id：basicErrorController（json+白页 适配响应）
   - 处理默认 `/error` 路径的请求；页面响应 `new ModelAndView("error", model)`；
@@ -1898,7 +1898,7 @@ public String upload(
 
 如果想要返回页面；就会找error视图【StaticView】。(默认是一个白页)
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221700629.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221700629.png)
 
 
 
@@ -1912,11 +1912,11 @@ public String upload(
 
    1. 遍历所有的 `handlerExceptionResolvers`，看谁能处理当前异常【HandlerExceptionResolver处理器异常解析器】
 
-      ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221701706.png)
+      ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221701706.png)
 
    2. 系统默认的  异常解析器
    
-      ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221701267.png)
+      ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221701267.png)
    
       1. DefaultErrorAttributes先来处理异常。把异常信息保存到request域，并且返回null；
    
@@ -1926,7 +1926,7 @@ public String upload(
    
          2. 解析错误视图；遍历所有的  ErrorViewResolver  看谁能解析。
    
-            ![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221701304.png)
+            ![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221701304.png)
    
          3. 默认的 `DefaultErrorViewResolver` ,作用是把响应状态码作为错误页的地址，error/500.html
    
@@ -1958,7 +1958,7 @@ Servlet、Filter、Listener
 - 通过`ServletRegistrationBean<DispatcherServlet>`把 DispatcherServlet  配置进来。
 - 默认映射的是 / 路径。
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221701379.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221701379.png)
 
 tomcat-Servlet；
 
@@ -2020,7 +2020,7 @@ public class MyRegistConfig {
 
 - 切换服务器
 
-![](https://cdn.jsdelivr.net/gh/eardh/picture/spring_img/202205221701783.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/spring_img/202205221701783.png)
 
 ```xml
 <dependency>

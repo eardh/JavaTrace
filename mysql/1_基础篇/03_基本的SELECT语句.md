@@ -15,7 +15,7 @@
 
 - 不同的数据库生产厂商都支持SQL语句，但都有特有内容。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171713442.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171713442.jpeg)
 
 
 
@@ -23,7 +23,7 @@
 
 自从 SQL 加入了 TIOBE 编程语言排行榜，就一直保持在 Top 10。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171713277.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171713277.jpeg)
 
 
 
@@ -183,7 +183,7 @@ SELECT *
 FROM departments;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171731597.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171731597.png)
 
 >一般情况下，除非需要使用表中所有的字段数据，最好不要使用通配符‘\*’。使用通配符虽然可以节省输入查询语句的时间，但是获取不需要的列数据通常会降低查询和所使用的应用程序的效率。通配符的优势是，当不知道所需要的列的名称时，可以通过它获取它们。
 >
@@ -196,7 +196,7 @@ SELECT department_id, location_id
 FROM departments;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171731904.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171731904.png)
 
 > MySQL中的SQL语句是不区分大小写的，因此SELECT和select的作用是相同的，但是，许多开发人员习惯将关键字大写、数据列和表名小写，读者也应该养成一个良好的编程习惯，这样写出来的代码更容易阅读和维护。
 
@@ -217,7 +217,7 @@ SELECT last_name AS name, commission_pct comm
 FROM employees;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171737380.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171737380.jpeg)
 
 ![](media/746e13a872c54ca6201459eecec93c9e.jpeg)
 
@@ -226,7 +226,7 @@ SELECT last_name "Name", salary*12 "Annual Salary"
 FROM employees;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171737199.jpeg)![](media/244e7a40a94679f3d4c106aeedc4f40d.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171737199.jpeg)![](media/244e7a40a94679f3d4c106aeedc4f40d.jpeg)
 
 
 
@@ -239,7 +239,7 @@ SELECT department_id
 FROM employees;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171738595.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171738595.png)
 
 **在SELECT语句中使用关键字DISTINCT去除重复行**
 
@@ -248,7 +248,7 @@ SELECT DISTINCT department_id
 FROM employees;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171738626.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171738626.png)
 
 针对于：
 
@@ -385,7 +385,7 @@ mysql> desc employees;
 
 - 背景：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171746819.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171746819.jpeg)
 
 - 语法：
 
@@ -406,4 +406,4 @@ FROM employees
 WHERE department_id = 90;
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202201171746427.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171746427.jpeg)

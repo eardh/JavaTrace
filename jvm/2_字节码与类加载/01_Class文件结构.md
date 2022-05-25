@@ -15,7 +15,7 @@ Class文件结构 🤣
 **2. Java 虚拟机:跨语言的平台**
 **Java虚拟机不和包括Java 在内的任何语言绑定，它只与 “Class 文件” 这种特定的二进制文件格式所关联。**无论使用何种语言进行软件开发，只要能将源文件编译为正确的Class文件，那么这种诰言就可以在ava虚拟机上执行。可以说，统一而强大的class文件结构,就是Java虚拟机.的基石、桥梁。
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301727634.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301727634.jpg)
 
 
 
@@ -31,7 +31,7 @@ Class文件结构 🤣
 - javac是一种能够将]ava源码编译为字节码的前端编译器。
 - . Javac编译器在将Java源码编译为一个有效的字节码文件过程中经历了4个步骤，分别是**词法解析、语法解析、语义解析以及生成字节码。**
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301727357.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301727357.jpg)
 
 
 
@@ -44,7 +44,7 @@ Class文件结构 🤣
 
 ### 2. Java的前端编译器
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301727125.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301727125.jpg)
 
 
 
@@ -96,7 +96,7 @@ public class IntegerTest {
 }
 ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301727967.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301727967.png)
 
 ```java
 class Father {
@@ -164,7 +164,7 @@ new Son()在调用构造方法之前会先调用父类构造，父类构造中�
 
 Java虚拟机的指令由一个字节长度的、代表着某种特定操作含义的操作码（opcode)以及跟随其后的等至多个代表此操作所需参数的操作数( operand）所构成。虚拟机中许多指令并不包含操作数，只有一个操作码。比如：
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301728962.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301728962.png)
 
 
 
@@ -212,7 +212,7 @@ public class Demo {
 
 
 **对应字节码文件：**
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301728710.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301728710.png)
 
 
 
@@ -242,7 +242,7 @@ Class文件的结构并不是一成不变的，随着Java虚拟机的不断发�
 
 - 属性表集合
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301729352.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301729352.png)
 
 |      类型      | 名称                | 说明                    | 长度    | 数量                  |
 | :------------: | ------------------- | ----------------------- | ------- | --------------------- |
@@ -265,7 +265,7 @@ Class文件的结构并不是一成不变的，随着Java虚拟机的不断发�
 
 这是一张Java字节码总的结构表，我们按照上面的顺序逐一进行解读就可以了。
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301729245.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301729245.png)
 
 **这里整体给大家讲解一遍，这里需要注意听。否则大家以后也很难有动力，踏实认真的一个字节一个字节的解读一遍。**
 
@@ -273,7 +273,7 @@ Class文件的结构并不是一成不变的，随着Java虚拟机的不断发�
 
 ### 1. 魔数
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301729291.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301729291.png)
 
 
 
@@ -313,7 +313,7 @@ Error: A JNI error has occurred,please check your installation and try againExce
 - Java 的版本号是从45开始的，JDK 1.1之后的每个JDK大版本发布主版本号向上加1。
 - 不同版本的Java编译器编译的Class文件对应的版本是不一样的。目前，高版本的Java虚拟机可以执行由低版本编译器生成的Class文件,但是低版本的Java虚拟机不能执行由高版本编译器生成的Class文件。否则JVM会抛出 `java.lang.UnsupportedClassVersionError`异常(**向下兼容**)。
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301730591.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301730591.png)
 
 - 在实际应用中，由于开发环境和生产环境的不同，可能会导致该问题的发生。因此，需要我们在开发时，特别注意开发编译的JDK版本和生产环境中的JDK版本是否一致。
   - 虚拟机JDK版本为1.k (k >= 2)时，对应的class文件格式版本号的范围为**45.0 - 44+k.0**（含两端）。
@@ -325,7 +325,7 @@ Error: A JNI error has occurred,please check your installation and try againExce
 - 常量池是Class文件中内容最为丰富的区域之一。常量池对于Class文件中的字段和方法解析也有着至关重要的作用。·
 - 随着Java虚拟机的不断发展，常量池的内容也日渐丰富。可以说，常量池是整个class文件的基石
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301730571.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301730571.png)
 
 - 在版本号之后，紧跟着的是常量池的数量，以及若干个常量池表项。
 - 常量池中常量的数量是不固定的，所以在常量池的入口需要放置一项u2类型的无符号数，代表常量池容量计数值（constant_pool_count)。与Java中语言习惯不一样的是，这个容量计数是从1而不是0开始的。
@@ -344,7 +344,7 @@ Error: A JNI error has occurred,please check your installation and try againExce
 - 常量池容量计数值（u2类型):从1开始，表示常量池中有多少项常量。即constant_pool_count=1表示常量池中有0个常量项
 - Demo的值为：
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301730021.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301730021.png)
 
 其值为Ox0016,掐指一算，也就是22。
 
@@ -427,7 +427,7 @@ com/atguigu/test/Demo这个就是类的全限定名，仅仅是把包名的"."�
 | L      | 对象类型，比如: Ljava/lang/object;                  |
 | [      | 数组类型，代表一维数组，比如：`double[][][]is [[[D` |
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301732624.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301732624.png)
 
 
 
@@ -446,7 +446,7 @@ com/atguigu/test/Demo这个就是类的全限定名，仅仅是把包名的"."�
 
  常量池中每一项常量都是一个表，JDK1.7之后共有14种不同的表结构数据。如下表格所示;
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301732365.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301732365.png)
 
 
 
@@ -454,7 +454,7 @@ com/atguigu/test/Demo这个就是类的全限定名，仅仅是把包名的"."�
 
 **比如第一项0a，这是一个方法符号引用，可以通过字节码文件对照得出**
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301732277.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301732277.png)
 
 - 根据上图每个类型的描述我们也可以知道每个类型是用来描述常量池中哪些内容（主要是字面量、符号引用〉的。比如:CONSTANT_Integer_info是用来描述常量池中字面量信息的，而且只是整型字面量信息。
 
@@ -477,7 +477,7 @@ com/atguigu/test/Demo这个就是类的全限定名，仅仅是把包名的"."�
 
   - 一个字节一个字节解析
 
-    ![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301732068.png)
+    ![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301732068.png)
 
 - 使用javap命令解析: javap -verbose Demo.class或jclasslib工具会更方便。
 
@@ -695,7 +695,7 @@ ConstantValue_attribute{
 
 说明：对于常量属性而言，attribute_length值恒为2。
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301733114.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301733114.png)
 
 
 
@@ -877,7 +877,7 @@ Code属性表的结构，如下图:
 
 可以看到 ：Code属性表的前两项跟属性表是一致的，即Code属性表遵循属性表的结构，后面那些则是他自定义的结构。
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301733141.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301733141.png)
 
 
 
@@ -909,9 +909,9 @@ Code属性表的结构，如下图:
   }
   ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301734215.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301734215.png)
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301734152.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301734152.png)
 
 
 
@@ -944,7 +944,7 @@ Code属性表的结构，如下图:
       } local_variable_table[local_variable_table_length]:
   ```
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301734946.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301734946.png)
 
 
 
@@ -971,7 +971,7 @@ Code属性表的结构，如下图:
 
 ### 9. 字节码解析最终结果 💗
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301735638.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301735638.png)
 
 
 
@@ -1016,7 +1016,7 @@ javap是jdk自带的反解析工具。它的作用就是根据class字节码文�
 
 在命令行中直接输入iavap或iavap -help可以看到iavap的options有如下选项:
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110301735730.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110301735730.png)
 
 一般常用的是-v -l -c三个选项。
 

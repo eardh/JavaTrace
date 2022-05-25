@@ -81,9 +81,9 @@
 
 ## 常量类型和结构细节
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110311911745.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110311911745.png)
 
-![](https://gitee.com/eardh/picture/raw/master/jvm_img/202110311911394.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/jvm_img/202110311911394.png)
 
 ## 访问标志
 

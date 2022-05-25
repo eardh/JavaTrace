@@ -8,7 +8,7 @@
 - 便于并行 最大化减少空指针异常 Optional
 - jvm 的一些调整
 
-![](https://gitee.com/eardh/picture/raw/master/new_feature_img/202111042212995.jpg)
+![](https://gitlab.com/eardh/picture/-/raw/main/new_feature_img/202111042212995.jpg)
 
 
 
@@ -921,7 +921,7 @@ Java8 中将并行进行了优化，我们可以很容易的对数据进行并�
 
 可以查看高并发相关文档
 
-![](https://gitee.com/eardh/picture/raw/master/new_feature_img/202111042209510.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/new_feature_img/202111042209510.png)
 
 
 

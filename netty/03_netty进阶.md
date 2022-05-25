@@ -212,13 +212,13 @@ serverBootstrap.option(ChannelOption.SO_RCVBUF, 10);
 >
 > * TCP 以一个段（segment）为单位，每发送一个段就需要进行一次确认应答（ack）处理，但如果这么做，缺点是包的往返时间越长性能就越差
 >
->   ![](https://gitee.com/eardh/picture/raw/master/netty_img/202112141548055.png)
+>   ![](https://gitlab.com/eardh/picture/-/raw/main/netty_img/202112141548055.png)
 >
 > 
 >
 > * 为了解决此问题，引入了窗口概念，窗口大小即决定了无需等待应答而可以继续发送的数据最大值
 >
->   ![](https://gitee.com/eardh/picture/raw/master/netty_img/202112141548685.png)
+>   ![](https://gitlab.com/eardh/picture/-/raw/main/netty_img/202112141548685.png)
 >
 > * 窗口实际就起到一个缓冲区的作用，同时也能起到流量控制的作用
 >
@@ -1088,7 +1088,7 @@ channel.writeInbound(s2);
 
 解读
 
-![](https://gitee.com/eardh/picture/raw/master/netty_img/202112141550527.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/netty_img/202112141550527.png)
 
 
 

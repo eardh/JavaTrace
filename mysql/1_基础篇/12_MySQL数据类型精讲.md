@@ -187,7 +187,7 @@ ZEROFILL : 0填充,（如果某列是ZEROFILL，那么MySQL会自动为当前列
 - FLOAT 表示单精度浮点数；
 - DOUBLE 表示双精度浮点数；
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203151638368.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151638368.png)
 
 - REAL默认就是 DOUBLE。如果你把 SQL 模式设定为启用“ REAL_AS_FLOAT ”，那 么，MySQL 就认为 REAL 是 FLOAT。如果要启用“REAL_AS_FLOAT”，可以通过以下 SQL 语句实现：
 
@@ -779,7 +779,7 @@ mysql> SELECT UNIX_TIMESTAMP();
 
 MySQL中，文本字符串总体上分为 CHAR 、 VARCHAR 、 TINYTEXT 、 TEXT 、 MEDIUMTEXT、 LONGTEXT 、 ENUM 、 SET 等类型。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203151639191.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151639191.png)
 
 ### 1. CHAR与VARCHAR类型
 
@@ -1193,13 +1193,13 @@ MySQL的空间数据类型（Spatial Data Type）对应于OpenGIS类，包括单
 
 下面展示几种常见的几何图形元素：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203151639419.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151639419.jpeg)
 
 - MultiPoint、MultiLineString、MultiPolygon、GeometryCollection 这4种类型都是集合类，是多个Point、LineString或Polygon组合而成。
 
 下面展示的是多个同类或异类几何图形元素的组合：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203151640391.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151640391.jpeg)
 
 
 

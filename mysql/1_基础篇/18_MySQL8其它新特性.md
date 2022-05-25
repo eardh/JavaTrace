@@ -41,7 +41,7 @@ Subquery 代表子查询，子查询前使用WITH语句将结果集命名为cte_
 
 **12. 窗口函数** ：MySQL 8开始支持窗口函数。在之前的版本中已存在的大部分 **聚合函数**  在 MySQL 8中也可以作为窗口函数来使用。
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203161607333.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203161607333.jpeg)
 
 **13. 正则表达式支持** ：MySQL在8.0.4以后的版本中采用支持 Unicode 的国际化组件库实现正则表达式操作，这种方式不仅能提供完全的Unicode支持，而且是多字节安全编码。MySQL增加了 `REGEXP_LIKE()`、`EGEXP_INSTR()`、`REGEXP_REPLACE()` 和 `REGEXP_SUBSTR()` 等函数来提升性能。另外，`regexp_stack_limit` 和 `regexp_time_limit` 系统变量能够通过匹配引擎来控制资源消耗。
 
@@ -231,7 +231,7 @@ MySQL 从 8.0版本 开始支持窗口函数。窗口函数的作用类似于在
 
 窗口函数总体上可以分为序号函数、分布函数、前后函数、首尾函数和其他函数，如下表：
 
-![](https://gitee.com/eardh/picture/raw/master/mysql_img/202203161607006.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203161607006.jpeg)
 
 
 
