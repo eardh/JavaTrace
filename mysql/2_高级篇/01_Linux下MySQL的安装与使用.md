@@ -117,7 +117,7 @@ rm -rf /etc/my.cnf
 
 **1. 下载地址**
 
-官网：[**https://www.mysql.com**](https://www.mysql.com/)
+官网：[https://www.mysql.com](https://www.mysql.com/)
 
 **2. 打开官网，点击DOWNLOADS**
 
@@ -228,17 +228,18 @@ rpm -qa|grep net-tools
 在mysql的安装文件目录下执行：（必须按照顺序执行）
 
 ```bash
-rpm -ivh mysql-community-common-8.0.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-common-8.0.28-1.el7.x86_64.rpm
 
-rpm -ivh mysql-community-client-plugins-8.0.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-client-plugins-8.0.28-1.el7.x86_64.rpm
 
-rpm -ivh mysql-community-libs-8.0.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-libs-8.0.28-1.el7.x86_64.rpm
 
 # rpm -ivh mysql-community-icu-data-files-8.0.28-1.el7.x86_64.rpm  # mysql 8.28需要安装此rpm
 
-rpm -ivh mysql-community-client-8.0.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-client-8.0.28-1.el7.x86_64.rpm
 
-rpm -ivh mysql-community-server-8.0.25-1.el7.x86_64.rpm
+#出现错误执行 yum install libnuma*
+rpm -ivh mysql-community-server-8.0.28-1.el7.x86_64.rpm
 ```
 
 - 注意: 如在检查工作时，没有检查mysql依赖环境在安装mysql-community-server会报错

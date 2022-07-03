@@ -455,6 +455,48 @@ Redis的SortedSet是一个可排序的set集合，与Java中的TreeSet有些类�
 
 
 
+### 8. GEO数据结构
+
+GEO就是Geolocation的简写形式，代表地理坐标。Redis在3.2版本中加入了对GEO的支持，允许存储地理坐标信息，帮助我们根据经纬度来检索数据。常见的命令有：
+
+[GEOADD](https://redis.io/commands/geoadd)：添加一个地理空间信息，包含：经度（longitude）、纬度（latitude）、值（member）
+
+[GEODIST](https://redis.io/commands/geodist)：计算指定的两个点之间的距离并返回
+
+[GEOHASH](https://redis.io/commands/geohash)：将指定member的坐标转为hash字符串形式并返回
+
+[GEOPOS](https://redis.io/commands/geopos)：返回指定member的坐标
+
+[GEORADIUS](https://redis.io/commands/georadius)：指定圆心、半径，找到该圆内包含的所有member，并按照与圆心之间的距离排序后返回。6.2以后已废弃
+
+[GEOSEARCH](https://redis.io/commands/geosearch)：在指定范围内搜索member，并按照与指定点之间的距离排序后返回。范围可以是圆形或矩形。6.2.新功能
+
+[GEOSEARCHSTORE](https://redis.io/commands/geosearchstore)：与GEOSEARCH功能一致，不过可以把结果存储到一个指定的key。 6.2.新功能
+
+
+
+### 9. BitMap
+
+Redis中是利用string类型数据结构实现BitMap**，**因此最大上限是512M，转换为bit则是 2^32个bit位。
+
+BitMap的操作命令有：
+
+[SETBIT](https://redis.io/commands/setbit)：向指定位置（offset）存入一个0或1
+
+[GETBIT](https://redis.io/commands/getbit) ：获取指定位置（offset）的bit值
+
+[BITCOUNT](https://redis.io/commands/bitcount) ：统计BitMap中值为1的bit位的数量
+
+[BITFIELD](https://redis.io/commands/bitfield) ：操作（查询、修改、自增）BitMap中bit数组中的指定位置（offset）的值
+
+[BITFIELD_RO](https://redis.io/commands/bitfield_ro) ：获取BitMap中bit数组，并以十进制形式返回
+
+[BITOP](https://redis.io/commands/bitop) ：将多个BitMap的结果做位运算（与 、或、异或）
+
+[BITPOS](https://redis.io/commands/bitpos) ：查找bit数组中指定范围内第一个0或1出现的位置
+
+
+
 
 
 ## 3. Redis客户端
