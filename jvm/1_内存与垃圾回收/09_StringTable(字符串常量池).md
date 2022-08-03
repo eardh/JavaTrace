@@ -885,7 +885,6 @@ public class Test {
 ```java
 public class Test {
     public static void main(String[] args) {
-        String x = "ab";
         String s = new String("a") + new String("b");//new String("ab")
         //在上一行代码执行完以后，字符串常量池中并没有"ab"
 		/*
@@ -926,7 +925,7 @@ public class Test {
         String s2 = s.intern();
 
         System.out.println(s2 == "ab");//jdk6:true  jdk8:true
-        System.out.println(s == "ab");//jdk6:false  jdk8:true
+        System.out.println(s == "ab");//jdk6:false  jdk8:false
     }
 }
 ```

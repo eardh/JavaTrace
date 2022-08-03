@@ -219,14 +219,12 @@ FROM employees;
 
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171737380.jpeg)
 
-![](media/746e13a872c54ca6201459eecec93c9e.jpeg)
-
 ```sql
 SELECT last_name "Name", salary*12 "Annual Salary"
 FROM employees;
 ```
 
-![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171737199.jpeg)![](media/244e7a40a94679f3d4c106aeedc4f40d.jpeg)
+![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202201171737199.jpeg)
 
 
 
@@ -293,7 +291,7 @@ corresponds to your MySQL server version for the right syntax to use near
 - 正确的
 
 ```sql
-mysql> SELECT * FROM`ORDER`;
+mysql> SELECT * FROM `ORDER`;
 +----------+------------+
 | order_id | order_name |
 +----------+------------+

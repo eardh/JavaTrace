@@ -187,7 +187,7 @@ ZEROFILL : 0填充,（如果某列是ZEROFILL，那么MySQL会自动为当前列
 - FLOAT 表示单精度浮点数；
 - DOUBLE 表示双精度浮点数；
 
-![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151638368.png)
+![(https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203151638368.png)
 
 - REAL默认就是 DOUBLE。如果你把 SQL 模式设定为启用“ REAL_AS_FLOAT ”，那 么，MySQL 就认为 REAL 是 FLOAT。如果要启用“REAL_AS_FLOAT”，可以通过以下 SQL 语句实现：
 
