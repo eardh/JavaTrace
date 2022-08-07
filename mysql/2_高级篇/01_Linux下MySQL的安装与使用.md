@@ -1169,9 +1169,7 @@ select * from employees group by department_id limit 10;
 
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203171501004.jpeg)
 
-设置 sql_mode 模式为 STRICT_TRANS_TABLES ，然后插入数据：
 
-![](media/4de18adb1929742769df57fb967321d5.jpeg)
 
 
 

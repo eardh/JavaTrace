@@ -4,13 +4,13 @@
 
 - 事务的隔离性由`锁机制`实现。
 - 而事务的原子性、一致性和持久性由事务的 redo 日志和undo 日志来保证。
-  - `REDO LOG` 称为``重做日志`，提供再写入操作，恢复提交事务修改的页操作，用来保证事务的持久性。
+  - `REDO LOG` 称为`重做日志`，提供再写入操作，恢复提交事务修改的页操作，用来保证事务的持久性。
   - `UNDO LOG` 称为`回滚日志`，回滚行记录到某个特定版本，用来保证事务的原子性、一致性。
 
 有的DBA或许会认为UNDO是REDO的逆过程，其实不然。REDO和UNDO都可以视为是一种`恢复操作`，但是：
 
-- `oredo log`：是存储引擎层(innodb)生成的日志，记录的是`物理级别`上的页修改操作，比如页号xx、偏移量yyy写入了'zzz'数据。主要为了保证数据的可靠性；
-- `oundo log`：是存储引擎层(innodb)生成的日志，记录的是`逻辑操作`日志，比如对某一行数据进行了INSERT语句操作，那么undo log就记录一条与之相反的DELETE操作。主要用于`事务的回滚`(undo log记录的是每个修改操作的`逆操作`)和`一致性非锁定读`(undo log回滚行记录到某种特定的版本---MVCC，即多版本并发控制)。
+- `redo log`：是存储引擎层(innodb)生成的日志，记录的是`物理级别`上的页修改操作，比如页号xx、偏移量yyy写入了'zzz'数据。主要为了保证数据的可靠性；
+- `undo log`：是存储引擎层(innodb)生成的日志，记录的是`逻辑操作`日志，比如对某一行数据进行了INSERT语句操作，那么undo log就记录一条与之相反的DELETE操作。主要用于`事务的回滚`(undo log记录的是每个修改操作的`逆操作`)和`一致性非锁定读`(undo log回滚行记录到某种特定的版本---MVCC，即多版本并发控制)。
 
 
 
@@ -36,7 +36,7 @@ InnoDB存储引擎是以`页为单位`来管理存储空间的。在真正访问
 
 - **随机IO刷新较慢**
 
-  一个事务可能包含很多语句，即使是一条语句也可能修改许多页面，假如该事务修改的这些页面可能并不相邻，这就意味着在将某个事务修改的Buffer Pool中的页面`刷新到磁盘`时，需要进行很多的`随机IO`，随机lo比顺序IO要慢，尤其对于传统的机械硬盘来说。
+  一个事务可能包含很多语句，即使是一条语句也可能修改许多页面，假如该事务修改的这些页面可能并不相邻，这就意味着在将某个事务修改的Buffer Pool中的页面`刷新到磁盘`时，需要进行很多的`随机IO`，随机io比顺序IO要慢，尤其对于传统的机械硬盘来说。
 
 `另一个解决的思路`：我们只是想让已经提交了的事务对数据库中数据所做的修改永久生效，即使后来系统崩溃，在重启后也能把这种修改恢复出来。所以我们其实没有必要在每次事务提交时就把该事务在内存中修改过的全部页面刷新到磁盘，只需要把`修改`了哪些东西`记录一下`就好。比如，某个事务将系统表空间中`第10号`页面中偏移量为 `100` 处的那个字节的值 `1` 改成 `2`。我们只需要记录一下：将第0号表空间的10号页面的偏移量为100处的值更新为 2 。
 
@@ -147,7 +147,7 @@ mysql> show variables like 'innodb_flush_log_at_trx_commit';
 
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203272257487.png)
 
-也就是说，一个没有提交事务的`redo log`记录，也可能会制盘。因为在事务执行过程 redo log 记录是会写入`redo log buffer`中，这些 redo log 记录会被`后台线程`刷盘。
+也就是说，一个没有提交事务的`redo log`记录，也可能会刷盘。因为在事务执行过程 redo log 记录是会写入`redo log buffer`中，这些 redo log 记录会被`后台线程`刷盘。
 
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203272257635.png)
 
@@ -183,7 +183,7 @@ mysql> show variables like 'innodb_flush_log_at_trx_commit';
 >
 > 为`0`时,master thread中每1秒进行一次重做日志的fsync操作，因此实例crash最多丢失1秒钟内的事务。(master thread是负责将缓冲池中的数据异步刷新到磁盘，保证数据的一致性)
 >
-> 数值o的话，是一种折中的做法，它的IO效率理论是高于1的，低于2的，这种策略也有丢失数据的风险，也无法保证D。
+> 数值0的话，是一种折中的做法，它的IO效率理论是高于1的，低于2的，这种策略也有丢失数据的风险，也无法保证D。
 
 
 
@@ -253,7 +253,7 @@ MySQL把对底层页面中的一次原子访问的过程称之为一个`Mini-Tra
 
 #### 2. redo 日志写入log buffer
 
-向`log buffer`中写入redo日志的过程是顺序的，也就是先往前边的block中写，当该block的空闲空间用完之后再往下一个block中写。当我们想往`log buffer`中写入redo日志时，j第一个遇到的问题就是应该写在哪个`block`的哪个偏移量处，所以`InnoDB`的设计者特意提供了一个称之为`buf_free`的全局变量，该变量指明后续写入的redo日志应该写入到`log buffer`中的哪个位置，如图所示:
+向`log buffer`中写入redo日志的过程是顺序的，也就是先往前边的block中写，当该block的空闲空间用完之后再往下一个block中写。当我们想往`log buffer`中写入redo日志时，第一个遇到的问题就是应该写在哪个`block`的哪个偏移量处，所以`InnoDB`的设计者特意提供了一个称之为`buf_free`的全局变量，该变量指明后续写入的redo日志应该写入到`log buffer`中的哪个位置，如图所示:
 
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203272258617.jpeg)
 
@@ -291,9 +291,9 @@ MySQL把对底层页面中的一次原子访问的过程称之为一个`Mini-Tra
 ![](https://gitlab.com/eardh/picture/-/raw/main/mysql_img/202203272259445.jpeg)
 
 - `log block header`的属分别如下：
-  - `LOG_BLOCK_HDR_NO` ：log buffer是由log block组成，在内部log buffer就好似一个数组，因此LO6_BLOCK_HDR_NO用来标记这个数组中的位置。其是递增并且循环使用的，占用4个字节，但是由于第一位用来判断是否是flush bit，所以最大的值为2G。
+  - `LOG_BLOCK_HDR_NO` ：log buffer是由log block组成，在内部log buffer就好似一个数组，因此LOG_BLOCK_HDR_NO用来标记这个数组中的位置。其是递增并且循环使用的，占用4个字节，但是由于第一位用来判断是否是flush bit，所以最大的值为2G。
   - `LOG_BLOCK_HDR_DATA_LEN` ：表示block中已经使用了多少字节，初始值为`12` (因为`log block body`从第12个字节处开始)。随着往block中写入的redo日志越来也多，本属性值也跟着增长。如果`log block body`已经被全部写满，那么本属性的值被设置为`512`。
-  - `LOG_BLOCK_FIRST_REC_GROUP` ：一条redo日志也可以称之为一条redo日志记录（(redo log record)，一个mtr会生产多条redo日志记录，这些redo日志记录被称之为一个redo日志记录组(redo log record group)。LO6_BLOCK_FIRST_REC_GROUP就代表该block中第一个mtr生成的redo日志记录组的偏移量(其实也就是这个block里第一个mtr生成的第一条redo日志的偏移量)。如果该值的大小和LOG_BLOCK_HDR_DATA_LEN 相同，则表示当前log block不包含新的日志。
+  - `LOG_BLOCK_FIRST_REC_GROUP` ：一条redo日志也可以称之为一条redo日志记录（(redo log record)，一个mtr会生产多条redo日志记录，这些redo日志记录被称之为一个redo日志记录组(redo log record group)。LOG_BLOCK_FIRST_REC_GROUP就代表该block中第一个mtr生成的redo日志记录组的偏移量(其实也就是这个block里第一个mtr生成的第一条redo日志的偏移量)。如果该值的大小和LOG_BLOCK_HDR_DATA_LEN 相同，则表示当前log block不包含新的日志。
   - `LOG_BLOCK_CHECKPOINT_NO` ：占用4字节，表示该log block最后被写入时的`checkpoint`。
 - `log block trailer`中属性的意思如下：
   - `LOG_BLOCK_CHECKSUM` ：表示block的校验值，用于正确性校验（其值和LOG_BLOCK_HDR_No相同)，我们暂时不关心它。
@@ -456,7 +456,7 @@ undo log相关参数一般很少改动。
 
 当我们开启一个事务需要写undo log的时候，就得先去undo log segment中去找到一个空闲的位置，当有空位的时候，就去申请undo页，在这个申请到的undo页中进行undo log的写入。我们知道mysql默认一页的大小是16k。
 
-为每一个事务分配一个页，是非常浪费的（除非你的事务非常长)，假设你的应用的TPS(每秒处理的事务数目)为1000，那么1s就需要100o个页，大概需要16M的存储，1分钟大概需要1G的存储。如果照这样下去除非MySQL清理的非常勤快，否则随着时间的推移，磁盘空间会增长的非常快，而且很多空间都是浪费的。
+为每一个事务分配一个页，是非常浪费的（除非你的事务非常长)，假设你的应用的TPS(每秒处理的事务数目)为1000，那么1s就需要1000个页，大概需要16M的存储，1分钟大概需要1G的存储。如果照这样下去除非MySQL清理的非常勤快，否则随着时间的推移，磁盘空间会增长的非常快，而且很多空间都是浪费的。
 
 于是undo页就被设计的可以`重用`了，当事务提交时，并不会立刻删除undo页。因为重用，所以这个undo页可能混杂着其他事务的undo log。undo log在commit后，会被放到一个`链表`中，然后判断undo页的使用空间是否`小于3/4`，如果小于3/4的话，则表示当前的undo页可以被重用，那么它就不会被回收，其他事务的undo log可以记录在当前undo页的后面。由于undo log是`离散的`，所以清理对应的磁盘空间时，效率不高。
 
@@ -525,7 +525,7 @@ undo log相关参数一般很少改动。
 假设有z个数值，分别为A=1和B=2，然后将A修改为3，B修改为4
 
 ```
-1. start transaction ;
+1. start transaction;
 2．记录 A=1 到 undo log;
 3. update A = 3;
 4．记录 A=3 到 redo log;
@@ -616,8 +616,7 @@ UPDATE user SET id=2 WHERE id=1;
 
 - 针对于update undo log
 
-  该undo log可能需要提供MVCC机制，因此不能在事务提交时就进行删除。提交时放入undo
-  log链表，等待purge线程进行最后的删除。
+  该undo log可能需要提供MVCC机制，因此不能在事务提交时就进行删除。提交时放入undo log链表，等待purge线程进行最后的删除。
 
 > 补充：
 >
