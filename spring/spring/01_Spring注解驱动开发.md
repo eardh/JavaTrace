@@ -1483,7 +1483,7 @@ AnnotationAwareAspectJAutoProxyCreator => InstantiationAwareBeanPostProcessor
 
    `postProcessAfterInitialization`
 
-   包装如果需要的情况下 `return wrapIfNecessary( bean, beanName, cacheKey)`
+   包装如果需要的情况下 `return wrapIfNecessary(bean, beanName, cacheKey)`
 
    1. 获取当前bean的所有`增强器(通知方法)`  `Object[] specificInterceptors`
       1. 找到候选的所有的增强器(找哪些通知方法是需要切入当前bean方法的)
@@ -1745,16 +1745,22 @@ public class TxConfig {
    - 给容器中注册事务增强器
 
      1. 事务增强器要用事务注解的信息，`AnnotationTransactionAttributeSource`解析事务注解
+   
 2. 事务拦截器
-     
+   
    - `TransactionInterceptor`：保存了事务属性信息，事务管理器
         - 他是一个`MethodInterceptor`
+        
    - 在目标方法执行的时候 ，执行拦截器链
         - 事务拦截器
      1. 先获取`事务相关的属性`
-          2. 再获取`PlatformTransactionManager`，如果事先没有添加指定任何transactionManager，最终会从容器中按照类型获取一个PlatformTransactionManager。
+     
+     2. 再获取`PlatformTransactionManager`，如果事先没有添加指定任何transactionManager，最终会从容器中按照类型获取一个PlatformTransactionManager。
+     
      3. 执行目标方法 
-             - 如果异常，获取到事务管理器，利用事务管理回滚操作;
+     
+        - 如果异常，获取到事务管理器，利用事务管理回滚操作;
+     
         - 如果正常，利用事务管理器，提交事务
 
 **从上所述，事务底层就是AOP实现的，before里面开启事务，affter提交事务。affterthrowing回滚事务**
@@ -1919,11 +1925,11 @@ ContextRefreshedEvent、IOCTestExt$1[ source=[我发布的时间] （自己发�
    
    1. 获取事件的多播器(派发器) : `getApplicationEventMulticaster()`
    
-   2. multicastEvent派发事件:
+   2. multicastEvent派发事件;
    
    3. 获取到所有的ApplicationListener;
    
-      `for (final ApplicationListener<?> listener: getApplicationListeners(event, type)`
+      `for(final ApplicationListener<?> listener: getApplicationListeners(event, type)`
    
       1. 如果有Executor，可以支持使用Executor进行异步派发，`Executor executor = getTaskExecutor()`;
       2. 否则，同步的方式直接执行listener方法；`invokeListener(listener, event)`；拿到listener回调onApplicationEvent方法

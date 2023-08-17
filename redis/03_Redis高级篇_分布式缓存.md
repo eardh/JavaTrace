@@ -1044,7 +1044,7 @@ Nginx编程需要用到Lua语言，因此我们必须先入门Lua的基本语法
 
 Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。官网：https://www.lua.org/
 
-![image-20210821091437975](https://gitlab.com/eardh/picture/-/raw/main/redis_img/202207031446602.png)
+![](https://gitlab.com/eardh/picture/-/raw/main/redis_img/202207031446602.png)
 
 Lua经常嵌入到C语言开发的程序中，例如游戏开发、游戏插件等。
 

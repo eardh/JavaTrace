@@ -8,7 +8,7 @@
 
 > 我们的愿景是成为 MyBatis 最好的搭档，就像魂斗罗中的 1P、2P，基友搭配，效率翻倍。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/26045818/1646236009298-2c9d2ee9-5f1a-4d6e-9c33-c88cbe70df57.png?x-oss-process=image%2Fresize%2Cw_1045%2Climit_0)
+![](https://gitlab.com/eardh/picture/raw/main/common_img/202308112052421.png)
 
 
 
@@ -38,7 +38,7 @@
 
 ### 4. 框架结构
 
-![](https://cdn.nlark.com/yuque/0/2022/png/26045818/1646236168839-b4adcdfa-b5c6-4001-9ace-97b60dcc6085.png?x-oss-process=image%2Fresize%2Cw_1027%2Climit_0)
+![](https://gitlab.com/eardh/picture/raw/main/common_img/202308112106376.png)
 
 
 
@@ -812,7 +812,7 @@ mybatis-plus:
 
   单表数据拆分有两种方式：**垂直分表和水平分表**。示意图如下：
 
-  ![](https://cdn.nlark.com/yuque/0/2022/png/26045818/1646267260847-4955de38-541d-4b5b-ae08-acd164cc9e0f.png?x-oss-process=image%2Fresize%2Cw_1125%2Climit_0)
+  ![](https://gitlab.com/eardh/picture/raw/main/common_img/202308112111917.png)
 
   - 垂直分表
 
@@ -862,7 +862,7 @@ mybatis-plus:
 
   12bit作为毫秒内的流水号（意味着每个节点在每毫秒可以产生 4096 个 ID）。
 
-  ![](https://cdn.nlark.com/yuque/0/2022/png/26045818/1646267447730-bbdf4140-afd8-4021-afe0-03c35f1ab5fc.png?x-oss-process=image%2Fresize%2Cw_1125%2Climit_0)
+  ![](https://gitlab.com/eardh/picture/raw/main/common_img/202308112147486.png)
 
 - 优点：整体上按照时间自增排序，并且整个分布式系统内不会产生ID碰撞，并且效率较高。
 
@@ -931,7 +931,7 @@ step3：测试
 
 ### 1. wrapper
 
-![](https://cdn.nlark.com/yuque/0/2022/png/26045818/1646267666342-40494034-6b13-496f-bbd9-585ee6e1bb78.png?x-oss-process=image%2Fresize%2Cw_1125%2Climit_0)
+![](https://gitlab.com/eardh/picture/raw/main/common_img/202308112149268.png)
 
 Wrapper ： **条件构造抽象类**，最顶端父类 
 

@@ -359,9 +359,7 @@ s ->> s : accept()
 
 
 
-netty 中
-
-可以通过  option(ChannelOption.SO_BACKLOG, 值) 来设置大小
+netty 中可以通过  option(ChannelOption.SO_BACKLOG, 值) 来设置大小
 
 
 

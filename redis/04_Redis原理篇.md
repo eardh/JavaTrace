@@ -253,7 +253,8 @@ Dict在每次新增键值对时都会检查**负载因子**（LoadFactor = used/
 ```c
 static int _dictExpandIfNeeded(dict *d){
     // 如果正在rehash，则返回ok
-    if (dictIsRehashing(d)) return DICT_OK;    // 如果哈希表为空，则初始化哈希表为默认大小：4
+    if (dictIsRehashing(d)) return DICT_OK;
+    // 如果哈希表为空，则初始化哈希表为默认大小：4
     if (d->ht[0].size == 0) return dictExpand(d, DICT_HT_INITIAL_SIZE);
     // 当负载因子（used/size）达到1以上，并且当前没有进行bgrewrite等子进程操作
     // 或者负载因子超过5，则进行 dictExpand ，也就是扩容

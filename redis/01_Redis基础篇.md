@@ -343,7 +343,7 @@ Hash类型，也叫散列，其value是一个无序字典，类似于Java中的`
   | :---: | :----: |
   | HSET key field value |              添加或者修改hash类型key的field的值              |
   |    HGET key field    |                获取一个hash类型key的field的值                |
-  |        HMSET         |       hmset 和 hset 效果相同 ，0之后hmset可以弃用了        |
+  |        HMSET         |       hmset 和 hset 效果相同 ，6之后hmset可以弃用了        |
   |        HMGET         |              批量获取多个hash类型key的field的值              |
   |       HGETALL        |         获取一个hash类型的key中的所有的field和value          |
   |        HKEYS         |             获取一个hash类型的key中的所有的field             |
@@ -365,7 +365,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - 插入和删除快
 - 查询速度一般
 
-常用来存储一个有序数据，例如：朋友圈点赞列表，评论列表等.
+常用来存储一个有序数据，例如：朋友圈点赞列表，评论列表等
 
 **List的常见命令**
 
